@@ -2,12 +2,14 @@ from __future__ import annotations
 from time import sleep
 from random import randint, choice
 from os import system
-from models import Player
-from trail_config import *
-from run_func import *
 from dataclasses import dataclass
 from typing import Any, Dict, List
-from trails import Trail
+
+from src.models import Player
+from src.trail_config import *
+from src.run_func import *
+from src.trails import Trail
+
 
 def game_setup() -> list[Player]:
     """Sets up game and presents opening screens."""
@@ -52,6 +54,7 @@ def select_players() -> int:
                 print("That is not a number between 1-4. Try again.")
                 continue
 
+
 def name_players(num_players: int) -> list[str]:
     """Give each player a name and store them in a list."""
     players: list[str] = []
@@ -59,6 +62,7 @@ def name_players(num_players: int) -> list[str]:
         name: str = input(f"Enter a name for Player {i}: ")
         players.append(name)
     return players
+
 
 def create_players(players: list[str]) -> list[Player]:
     """Create list of player objects with
@@ -79,7 +83,7 @@ def create_players(players: list[str]) -> list[Player]:
                 choic[2],
                 choic[3],
                 choic[4]
-                )
+            )
 
             trail_options.append(trail)
 
@@ -92,7 +96,7 @@ def create_players(players: list[str]) -> list[Player]:
             supply_options,
             trail_options,
             calamities
-            )
+        )
 
         player_list.append(player)
     return player_list

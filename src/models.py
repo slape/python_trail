@@ -2,11 +2,13 @@ from __future__ import annotations
 from time import sleep
 from random import randint, choice
 from os import system
-from trail_config import *
 from typing import Any, Dict, List
 from dataclasses import dataclass
-from run_func import *
-from trails import Trail
+
+from src.run_func import *
+from src.trails import Trail
+from src.trail_config import *
+
 
 @dataclass
 class Player:
@@ -22,7 +24,7 @@ class Player:
         choic: str = choice(supplies)
         if choic in self.supplies:
             self.supplies[choic] += 1
-        else :
+        else:
             self.supplies[choic] += 1
         return f'You have received {choic}.'
 
@@ -31,7 +33,7 @@ class Player:
         choic: str = choice(list(trails))
         if choic in self.trail_options:
             trail_options[choic] += 1
-        else :
+        else:
             trail_options[choic] = 1
         return f'You have received {choic}.'
 
@@ -75,7 +77,7 @@ class Player:
                 trails[roll][2],
                 trails[roll][3],
                 trails[roll][4]
-                )
+            )
             system('clear')
             print(f'\nYou get option:')
             print(f'{trail}\n {trail.desc}\n')

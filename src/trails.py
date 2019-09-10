@@ -1,8 +1,9 @@
 from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Dict, List
-from run_func import *
 from random import choice
+from src.run_func import *
+
 
 @dataclass
 class Trail:

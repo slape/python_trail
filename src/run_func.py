@@ -4,7 +4,9 @@ from random import randint, choice
 from os import system
 from dataclasses import dataclass
 from typing import Any, Dict, List
-from trail_config import *
+
+from src.trail_config import *
+
 
 def print_players(players: list[Player]) -> None:
     """Print player numbers and names."""
@@ -15,12 +17,14 @@ def print_players(players: list[Player]) -> None:
         wait()
         system('clear')
 
+
 def print_ascii(asciiFile: str) -> None:
     """prints ascii art from text file."""
     with open(asciiFile, "r") as f:
         for i in f:
             print(i),
             sleep(.1)
+
 
 def roll_dice(total_avail: int) -> int:
     """Simulates dice roll. Returns random value."""
@@ -46,6 +50,7 @@ def roll_dice(total_avail: int) -> int:
         print(f"The die roll is: {roll}.")
         sleep(.75)
         return roll
+
 
 def wait() -> None:
     """Waits for player to hit enter."""

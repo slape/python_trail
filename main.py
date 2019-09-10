@@ -2,12 +2,13 @@ from __future__ import annotations
 from time import sleep
 from random import randint, choice
 from os import system
-from models import Player
-from trail_config import *
-from setup_func import *
-from run_func import *
 from typing import Any, Dict, List
-from trails import Trail
+
+from src.models import Player
+from src.trail_config import *
+from src.setup_func import *
+from src.run_func import *
+from src.trails import Trail
 
 # Start Game Play
 
