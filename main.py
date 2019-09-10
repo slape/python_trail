@@ -10,6 +10,8 @@ from typing import Any, Dict, List
 from trails import Trail
 
 # Start Game Play
+
+
 def main():
     player_list: list[Player] = game_setup()
     trails_traversed: int = 0
@@ -86,7 +88,8 @@ def main():
                             print_ascii(ascii[supply[1]])
                             print(f'{player.name} has {supply[0]}.')
                             sleep(.75)
-                            print(f'Using {supply[0]} to resolve this calamity.')
+                            print(
+                                f'Using {supply[0]} to resolve this calamity.')
                             wait()
                             player.lose_supply(supply)
                             calamity = []
@@ -94,7 +97,7 @@ def main():
                             break
                     if find:
                         break
-                    else :
+                    else:
                         system('clear')
                         print(f'{player.name} only has these supplies:')
                         for i in player.supplies:
@@ -106,7 +109,7 @@ def main():
                     if trails_traversed == 20:
                         break
                     continue
-                else :
+                else:
                     player_list.remove(player)
                     trails_traversed += 1
                     system('clear')
@@ -121,7 +124,8 @@ def main():
     if len(player_list) > 0:
         system('clear')
         print_ascii(ascii['end'])
-        print(f"Congratulations! You made it through the trail with {len(player_list)} players left.")
+        print(
+            f"Congratulations! You made it through the trail with {len(player_list)} players left.")
         print(f'Enjoy some smores by the camp fire.')
         wait()
         system('clear')
@@ -130,7 +134,7 @@ def main():
         print('Game Over.')
         sleep(3)
         system('clear')
-    else :
+    else:
         system('clear')
         print_ascii(ascii['death'])
         print(f"The Trail is harsh. Everyone died.")
@@ -141,6 +145,7 @@ def main():
         print('Game Over.')
         sleep(3)
         system('clear')
+
 
 if __name__ == '__main__':
     main()
